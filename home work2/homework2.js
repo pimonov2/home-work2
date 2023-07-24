@@ -9,8 +9,7 @@ function optimizer(data){
     const updatedPriceData = {};
     for (const key in data) {
         const productName = key.toLowerCase();
-        const price = parseFloat(data[key]).toFixed(2); 
-        updatedPriceData[productName] = Number(price);
+        updatedPriceData[productName] = Number(data[key]).toFixed(2);
     }
     return updatedPriceData;
 }
