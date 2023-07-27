@@ -1,4 +1,11 @@
 function durationBetweenDates(startDateStr, endDateStr, dimension) {
+
+    if (!startDateStr || !endDateStr || !dimension) {
+        startDateStr = '12 13 2023';
+        endDateStr = '12 14 2023';
+        dimension = 'days';
+    }
+
     const startDate = new Date(startDateStr);
     const endDate = new Date(endDateStr);
 
@@ -11,9 +18,6 @@ function durationBetweenDates(startDateStr, endDateStr, dimension) {
 
     const timeUnit = timeUnits[dimension];
 
-    if (!timeUnit) {
-        return 'Введите корректную размерность';
-    }
     let timeDifferenceMs;
     if (startDate > endDate) {
          timeDifferenceMs = startDate - endDate;
